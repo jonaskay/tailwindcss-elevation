@@ -1,4 +1,5 @@
 # tailwindcss-elevation
+[![Build Status](https://travis-ci.com/jonaskay/tailwindcss-elevation.svg?branch=master)](https://travis-ci.com/jonaskay/tailwindcss-elevation)
 
 Add Material Components elevation classes to your Tailwind CSS project.
 
