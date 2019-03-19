@@ -1,4 +1,4 @@
-const utilities = require('./utilities');
+const utilities = require('./src/utilities');
 
 module.exports = function(variants) {
   return function({ addUtilities }) {
