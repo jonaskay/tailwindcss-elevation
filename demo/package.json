@@ -1,0 +1,13 @@
+{
+  "name": "tailwindcss-elevation-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^0.7.4",
+    "tailwindcss-elevation": "^0.1.0"
+  },
+  "scripts": {
+    "build": "tailwind build src/styles.css -c ./tailwind.js -o dist/styles.css"
+  }
+}
