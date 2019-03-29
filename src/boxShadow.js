@@ -8,9 +8,7 @@ module.exports = function boxShadow(z) {
     return;
   }
 
-  return (
-    [shadow('umbra'), shadow('penumbra'), shadow('ambient')].join(', ') + ';'
-  );
+  return [shadow('umbra'), shadow('penumbra'), shadow('ambient')].join(', ');
 
   function shadow(type) {
     return `${config.elevation[type][z]} rgba(0,0,0,${config.opacity[type]})`;
