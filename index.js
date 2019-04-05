@@ -1,7 +1,7 @@
 const utilities = require('./src/utilities');
 
-module.exports = function(variants) {
+module.exports = function(variants, config) {
   return function({ addUtilities }) {
-    addUtilities(utilities(), variants);
+    addUtilities(utilities(config), variants);
   };
 };
