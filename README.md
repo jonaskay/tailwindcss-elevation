@@ -34,6 +34,22 @@ You can also include other supported variants. The full list of available varian
 * `group-hover`
 * `focus-within`
 
+### Configuration
+
+To change the default box-shadow base color, include a config object with the key `color` and an RGB triplet:
+
+```javascript
+// ...
+
+module.exports = {
+  // ...
+  plugins: [
+    require('tailwindcss-elevation')([], { color: '77,192,181' }),
+  ]
+  // ...
+}
+```
+
 ## Basic usage
 
 You can apply elevation to an element using the `.elevation-{z-value}` utilities.
