@@ -68,5 +68,18 @@ describe('tailwind', function() {
         }
       });
     });
+
+    it('should error when base color is invalid', function(done) {
+      const config = './test/fixtures/invalidConfig.js';
+      exec(build(config), function(err) {
+        if (err) {
+          assert.isOk(true);
+          done();
+        } else {
+          assert.isOk(false);
+          done();
+        }
+      });
+    });
   });
 });
