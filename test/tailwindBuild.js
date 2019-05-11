@@ -12,20 +12,20 @@ function build(config) {
 }
 
 function buildCSSFile(done, config, ...regexps) {
-      exec(build(config), function(err) {
-        if (err) {
-          done(err);
-        } else {
-          try {
+  exec(build(config), function(err) {
+    if (err) {
+      done(err);
+    } else {
+      try {
         regexps.forEach(function(regexp) {
           assert.fileContentMatch(output, regexp);
         });
-            done();
-          } catch (err) {
-            done(err);
-          }
-        }
-      });
+        done();
+      } catch (err) {
+        done(err);
+      }
+    }
+  });
 }
 
 describe('tailwind', function() {
@@ -51,8 +51,17 @@ describe('tailwind', function() {
         done,
         config,
         /.elevation-1\s+{/g,
-              /box-shadow: 0px 0px 0px 0px rgba\(255, 0, 0, .2\), 0px 0px 0px 0px rgba\(255, 0, 0, .14\), 0px 0px 0px 0px rgba\(255, 0, 0, .12\);\s+/g
-            );
+        /box-shadow: 0px 0px 0px 0px rgba\(255, 0, 0, .2\), 0px 0px 0px 0px rgba\(255, 0, 0, .14\), 0px 0px 0px 0px rgba\(255, 0, 0, .12\);\s+/g
+      );
+    });
+
+    it('should generate CSS file with utilities when opacity boost is defined', function(done) {
+      const config = './test/fixtures/opacityConfig.js';
+      buildCSSFile(
+        done,
+        config,
+        /box-shadow: 0px 0px 0px 0px rgba\(0, 0, 0, .3\), 0px 0px 0px 0px rgba\(0, 0, 0, .24\), 0px 0px 0px 0px rgba\(0, 0, 0, .22\);\s+/g
+      );
     });
 
     it('should error when base color is invalid', function(done) {
