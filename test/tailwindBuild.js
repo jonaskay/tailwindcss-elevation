@@ -11,62 +11,48 @@ function build(config) {
   return `./node_modules/.bin/tailwind build ${file} -c ${config} -o ${output}`;
 }
 
+function buildCSSFile(done, config, ...regexps) {
+      exec(build(config), function(err) {
+        if (err) {
+          done(err);
+        } else {
+          try {
+        regexps.forEach(function(regexp) {
+          assert.fileContentMatch(output, regexp);
+        });
+            done();
+          } catch (err) {
+            done(err);
+          }
+        }
+      });
+}
+
 describe('tailwind', function() {
   describe('build', function() {
     it('should generate CSS file with utilities', function(done) {
       const config = './test/fixtures/defaultConfig.js';
-      exec(build(config), function(err) {
-        if (err) {
-          done(err);
-        } else {
-          try {
-            assert.fileContentMatch(output, /.elevation-1\s+{/g);
-            assert.fileContentMatch(
-              output,
-              /box-shadow: 0px 0px 0px 0px rgba\(0, 0, 0, .2\), 0px 0px 0px 0px rgba\(0, 0, 0, .14\), 0px 0px 0px 0px rgba\(0, 0, 0, .12\);\s+/g
-            );
-            done();
-          } catch (err) {
-            done(err);
-          }
-        }
-      });
+      buildCSSFile(
+        done,
+        config,
+        /.elevation-1\s+{/g,
+        /box-shadow: 0px 0px 0px 0px rgba\(0, 0, 0, .2\), 0px 0px 0px 0px rgba\(0, 0, 0, .14\), 0px 0px 0px 0px rgba\(0, 0, 0, .12\);\s+/g
+      );
     });
 
     it('should generate CSS file with utilities when variants are defined', function(done) {
       const config = './test/fixtures/variantsConfig.js';
-      exec(build(config), function(err) {
-        if (err) {
-          done(err);
-        } else {
-          try {
-            assert.fileContentMatch(output, /.sm\\:elevation-1\s+/g);
-            done();
-          } catch (err) {
-            done(err);
-          }
-        }
-      });
+      buildCSSFile(done, config, /.sm\\:elevation-1\s+/g);
     });
 
     it('should generate CSS file with utilities when base color is defined', function(done) {
       const config = './test/fixtures/colorConfig.js';
-      exec(build(config), function(err) {
-        if (err) {
-          done(err);
-        } else {
-          try {
-            assert.fileContentMatch(output, /.elevation-1\s+{/g);
-            assert.fileContentMatch(
-              output,
+      buildCSSFile(
+        done,
+        config,
+        /.elevation-1\s+{/g,
               /box-shadow: 0px 0px 0px 0px rgba\(255, 0, 0, .2\), 0px 0px 0px 0px rgba\(255, 0, 0, .14\), 0px 0px 0px 0px rgba\(255, 0, 0, .12\);\s+/g
             );
-            done();
-          } catch (err) {
-            done(err);
-          }
-        }
-      });
     });
 
     it('should error when base color is invalid', function(done) {
