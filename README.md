@@ -36,7 +36,7 @@ You can also include other supported variants. The full list of available varian
 
 ### Configuration
 
-To change the default box-shadow base color, include a config object with the key `color` and an RGB triplet:
+To change the default configurations, you can include a config object:
 
 ```javascript
 // ...
@@ -44,11 +44,22 @@ To change the default box-shadow base color, include a config object with the ke
 module.exports = {
   // ...
   plugins: [
-    require('tailwindcss-elevation')([], { color: '77,192,181' }),
+    require('tailwindcss-elevation')(
+      [],
+      {
+        color: '77,192,181',
+        opacityBoost: '0.23'
+      }
+    )
   ]
   // ...
 }
 ```
+
+Config object accepts the following properties:
+
+* `color` changes the default box-shadow base color and accepts an RGB triplet as its value
+* `opacityBoost` is added to the default box-shadow opacity and accepts a number between 0.0 and 1.0
 
 ## Basic usage
 

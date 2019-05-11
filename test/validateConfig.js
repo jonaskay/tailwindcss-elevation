@@ -20,7 +20,24 @@ describe('#validateConfig()', function() {
     });
   });
 
-  it('should return null if color is missing', function() {
+  it('should return an error message if opacity boost is invalid', function() {
+    const opacityBoosts = ['foo', '1.01', '-0.01'];
+    opacityBoosts.forEach(function(opacityBoost) {
+      assert.equal(
+        validateConfig({ opacityBoost: opacityBoost }).message,
+        `Invalid opacityBoost value: ${opacityBoost}`
+      );
+    });
+  });
+
+  it('should return null if opacity boost is valid', function() {
+    const opacityBoosts = ['0', '1', '0.0', '1.0', '0.01', '.99'];
+    opacityBoosts.forEach(function(opacityBoost) {
+      assert.isNull(validateConfig({ opacityBoost: opacityBoost }));
+    });
+  });
+
+  it('should return null if config is empty', function() {
     assert.isNull(validateConfig({}));
   });
 
