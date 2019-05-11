@@ -923,5 +923,7 @@ module.exports = {
   |
   */
 
-  plugins: [require('../../index')([], { color: 'invalid' })],
+  plugins: [
+    require('../../index')([], { color: 'invalid', opacityBoost: 'invalid' }),
+  ],
 };

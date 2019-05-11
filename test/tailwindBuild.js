@@ -64,7 +64,7 @@ describe('tailwind', function() {
       );
     });
 
-    it('should error when base color is invalid', function(done) {
+    it('should error when config is invalid', function(done) {
       const config = './test/fixtures/invalidConfig.js';
       exec(build(config), function(err) {
         if (err) {
