@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-elevation",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Tailwind CSS plugin for Material Components elevation classes.",
   "author": "Joonas Kykkänen <jonaskay@iki.fi>",
   "repository": "https://github.com/jonaskay/tailwindcss-elevation.git",
