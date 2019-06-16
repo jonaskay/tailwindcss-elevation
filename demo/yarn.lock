@@ -1914,10 +1914,10 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-tailwindcss-elevation@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/tailwindcss-elevation/-/tailwindcss-elevation-0.1.0.tgz#f49654a21b235d2cbc9cb95a5eeb8bcfbfcb5e9d"
-  integrity sha512-DssYaEX225ixbL+iIY9b96epJ1cgjTlo7E40pzvqDCq/Jqv2lC862qgG4Qq1i5SevxpBidw0L2wS9hpMQct9Jg==
+tailwindcss-elevation@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-elevation/-/tailwindcss-elevation-0.3.0.tgz#ccfb3600360d668545aefd1943a911686a1f00a0"
+  integrity sha512-xxVF6TktnwDJLafiI0ixyKYxLO5ZbosndYYUGUznV19NNrrDN3ayy0rS0eDd/3JFfY0KeP1yOmQ8tAmhsg+3Kw==
 
 tailwindcss@^1.0.4:
   version "1.0.4"
