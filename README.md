@@ -9,17 +9,13 @@ To install the package, run
 
     npm install tailwindcss-elevation
 
-To activate the plugin, modify your Tailwind CSS config file:
+To activate the plugin, add a `tailwind.config.js` file to the root of your project:
 
 ```javascript
-// ...
-
 module.exports = {
-  // ...
   plugins: [
     require('tailwindcss-elevation')(['responsive']),
   ]
-  // ...
 }
 ```
 
@@ -34,15 +30,14 @@ You can also include other supported variants. The full list of available varian
 * `group-hover`
 * `focus-within`
 
+To learn more about configuring your Tailwind CSS installation, see https://tailwindcss.com/docs/configuration.
+
 ### Configuration
 
 To change the default configurations, you can include a config object:
 
 ```javascript
-// ...
-
 module.exports = {
-  // ...
   plugins: [
     require('tailwindcss-elevation')(
       [],
@@ -52,7 +47,6 @@ module.exports = {
       }
     )
   ]
-  // ...
 }
 ```
 
