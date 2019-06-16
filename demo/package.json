@@ -4,10 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "tailwindcss": "^0.7.4",
+    "postcss-cli": "^6.1.2",
+    "tailwindcss": "^1.0.4",
     "tailwindcss-elevation": "^0.1.0"
   },
   "scripts": {
-    "build": "tailwind build src/styles.css -c ./tailwind.js -o dist/styles.css"
+    "build": "postcss src/styles.css -o dist/styles.css"
   }
 }
