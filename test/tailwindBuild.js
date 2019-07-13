@@ -21,7 +21,7 @@ function addPostcssConfig(tailwindConfig) {
   return new Promise(function(resolve, reject) {
     fs.writeFile(postcssConfig, content, function(err) {
       if (err) {
-        reject(err);
+        reject(new Error(`Failed to create ${postcssConfig}: ${err}`));
       }
 
       resolve();
