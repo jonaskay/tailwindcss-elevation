@@ -7,91 +7,91 @@ chai.use(require('chai-fs'));
 
 const file = './test/fixtures/styles.css';
 const output = './tmp/styles.css';
+const postcssConfig = './tmp/postcss.config.js';
 
-function build(config) {
-  const configContent = `
+function addPostcssConfig(tailwindConfig) {
+  const content = `
     module.exports = {
       plugins: [
-        require('tailwindcss')('${config}'),
+        require('tailwindcss')('${tailwindConfig}'),
       ],
     }
   `;
 
-  const postcssConfig = './tmp/postcss.config.js';
+  return new Promise(function(resolve, reject) {
+    fs.writeFile(postcssConfig, content, function(err) {
+      if (err) {
+        reject(err);
+      }
 
-  fs.writeFile(postcssConfig, configContent, function(err) {
-    if (err) {
-      return console.log(err);
-    }
+      resolve();
+    });
   });
-
-  return `./node_modules/.bin/postcss ${file} -o ${output} --config ${postcssConfig}`;
 }
 
-function buildCSSFile(done, config, ...regexps) {
-  exec(build(config), function(err) {
-    if (err) {
-      done(err);
-    } else {
-      try {
-        regexps.forEach(function(regexp) {
-          assert.fileContentMatch(output, regexp);
-        });
-        done();
-      } catch (err) {
-        done(err);
+async function buildCSSFile(config) {
+  await addPostcssConfig(config);
+  const cmd = `./node_modules/.bin/postcss ${file} -o ${output} --config ${postcssConfig}`;
+
+  return new Promise(function(resolve, reject) {
+    exec(cmd, function(err) {
+      if (err) {
+        reject(new Error(err));
       }
-    }
+      resolve();
+    });
   });
 }
 
 describe('tailwind', function() {
   describe('build', function() {
-    it('should generate CSS file with utilities', function(done) {
-      const config = './test/fixtures/defaultConfig.js';
-      buildCSSFile(
-        done,
-        config,
+    it('should generate CSS file with utilities', async function() {
+      await buildCSSFile('./test/fixtures/defaultConfig.js');
+
+      const regexps = [
         /.elevation-0\s+{/g,
-        /box-shadow: 0px 0px 0px 0px rgba\(0,0,0,0.20\), 0px 0px 0px 0px rgba\(0,0,0,0.14\), 0px 0px 0px 0px rgba\(0,0,0,0.12\);\s+/g
-      );
+        /box-shadow: 0px 0px 0px 0px rgba\(0,0,0,0.20\), 0px 0px 0px 0px rgba\(0,0,0,0.14\), 0px 0px 0px 0px rgba\(0,0,0,0.12\);\s+/g,
+      ];
+      regexps.forEach(function(regexp) {
+        assert.fileContentMatch(output, regexp);
+      });
     });
 
-    it('should generate CSS file with utilities when variants are defined', function(done) {
-      const config = './test/fixtures/variantsConfig.js';
-      buildCSSFile(done, config, /.sm\\:elevation-0\s+/g);
+    it('should generate CSS file with utilities when variants are defined', async function() {
+      await buildCSSFile('./test/fixtures/variantsConfig.js');
+
+      assert.fileContentMatch(output, /.sm\\:elevation-0\s+/g);
     });
 
-    it('should generate CSS file with utilities when base color is defined', function(done) {
-      const config = './test/fixtures/colorConfig.js';
-      buildCSSFile(
-        done,
-        config,
+    it('should generate CSS file with utilities when base color is defined', async function() {
+      await buildCSSFile('./test/fixtures/colorConfig.js');
+
+      const regexps = [
         /.elevation-0\s+{/g,
-        /box-shadow: 0px 0px 0px 0px rgba\(255,0,0,0.20\), 0px 0px 0px 0px rgba\(255,0,0,0.14\), 0px 0px 0px 0px rgba\(255,0,0,0.12\);\s+/g
-      );
+        /box-shadow: 0px 0px 0px 0px rgba\(255,0,0,0.20\), 0px 0px 0px 0px rgba\(255,0,0,0.14\), 0px 0px 0px 0px rgba\(255,0,0,0.12\);\s+/g,
+      ];
+      regexps.forEach(function(regexp) {
+        assert.fileContentMatch(output, regexp);
+      });
     });
 
-    it('should generate CSS file with utilities when opacity boost is defined', function(done) {
-      const config = './test/fixtures/opacityConfig.js';
-      buildCSSFile(
-        done,
-        config,
+    it('should generate CSS file with utilities when opacity boost is defined', async function() {
+      await buildCSSFile('./test/fixtures/opacityConfig.js');
+
+      assert.fileContentMatch(
+        output,
         /box-shadow: 0px 0px 0px 0px rgba\(0,0,0,0.30\), 0px 0px 0px 0px rgba\(0,0,0,0.24\), 0px 0px 0px 0px rgba\(0,0,0,0.22\);\s+/g
       );
     });
 
-    it('should error when config is invalid', function(done) {
-      const config = './test/fixtures/invalidConfig.js';
-      exec(build(config), function(err) {
-        if (err) {
-          assert.isOk(true);
-          done();
-        } else {
-          assert.isOk(false);
-          done();
-        }
-      });
+    it('should error when config is invalid', async function() {
+      try {
+        await buildCSSFile('./test/fixtures/invalidConfig.js');
+      } catch {
+        assert.isOk(true);
+        return;
+      }
+      assert.isOk(false);
     });
   });
 });
