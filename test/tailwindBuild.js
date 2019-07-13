@@ -1,13 +1,19 @@
 const exec = require('child_process').exec;
 const fs = require('fs');
+const path = require('path');
 const chai = require('chai');
 
 const assert = chai.assert;
 chai.use(require('chai-fs'));
 
-const file = './test/fixtures/styles.css';
-const output = './tmp/styles.css';
-const postcssConfig = './tmp/postcss.config.js';
+const tmpDir = './tmp';
+if (!fs.existsSync(tmpDir)) {
+  fs.mkdirSync(tmpDir);
+}
+
+const source = './test/fixtures/styles.css';
+const output = `${tmpDir}/styles.css`;
+const postcssConfig = `${tmpDir}/postcss.config.js`;
 
 function addPostcssConfig(tailwindConfig) {
   const content = `
@@ -31,7 +37,7 @@ function addPostcssConfig(tailwindConfig) {
 
 async function buildCSSFile(config) {
   await addPostcssConfig(config);
-  const cmd = `./node_modules/.bin/postcss ${file} -o ${output} --config ${postcssConfig}`;
+  const cmd = `./node_modules/.bin/postcss ${source} -o ${output} --config ${postcssConfig}`;
 
   return new Promise(function(resolve, reject) {
     exec(cmd, function(err) {
