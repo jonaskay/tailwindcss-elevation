@@ -4,7 +4,7 @@ const validateConfig = require('../src/validateConfig');
 
 describe('#validateConfig()', function() {
   it('should return an error message if color is invalid', function() {
-    const colors = ['red', '1', '255,0', '-1,-2,-3'];
+    const colors = ['red', '1', '255,0', '-1,-2,-3', '4fd1c5', '#...'];
     colors.forEach(function(color) {
       assert.equal(
         validateConfig({ color: color }).message,
@@ -14,7 +14,7 @@ describe('#validateConfig()', function() {
   });
 
   it('should return null if color is valid', function() {
-    const colors = ['0, 0, 0', ' 1,2,3 ', '255,255,255'];
+    const colors = ['0, 0, 0', ' 1,2,3 ', '255,255,255', '#4fd1c5', '#FFF'];
     colors.forEach(function(color) {
       assert.isNull(validateConfig({ color: color }));
     });

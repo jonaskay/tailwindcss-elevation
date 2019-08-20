@@ -17,12 +17,21 @@ describe('#utilities()', function() {
     );
   });
 
-  it('should return a utility for .elevation-1 when config includes color', function() {
+  it('should return a utility for .elevation-1 when config includes color with an RGB triplet', function() {
     const config = { color: '255,255,0' };
 
     assert.equal(
       utilities(config)['.elevation-1'].boxShadow,
       '0px 2px 1px -1px rgba(255,255,0,0.20), 0px 1px 1px 0px rgba(255,255,0,0.14), 0px 1px 3px 0px rgba(255,255,0,0.12)'
+    );
+  });
+
+  it('should return a utility for .elevation-1 when config includes color with a HEX triplet', function() {
+    const config = { color: '#E53E3E' };
+
+    assert.equal(
+      utilities(config)['.elevation-1'].boxShadow,
+      '0px 2px 1px -1px rgba(229,62,62,0.20), 0px 1px 1px 0px rgba(229,62,62,0.14), 0px 1px 3px 0px rgba(229,62,62,0.12)'
     );
   });
 
