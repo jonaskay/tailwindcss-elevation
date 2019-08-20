@@ -15,5 +15,8 @@
     "mocha": "^6.0.2",
     "postcss-cli": "^6.1.2",
     "tailwindcss": "^1.0.4"
+  },
+  "dependencies": {
+    "hex-rgb": "^4.1.0"
   }
 }

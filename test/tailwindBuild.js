@@ -69,12 +69,24 @@ describe('tailwind', function() {
       assert.fileContentMatch(output, /.sm\\:elevation-0\s+/g);
     });
 
-    it('should generate CSS file with utilities when base color is defined', async function() {
-      await buildCSSFile('./test/fixtures/colorConfig.js');
+    it('should generate CSS file with utilities when base color is defined using an RGB triplet', async function() {
+      await buildCSSFile('./test/fixtures/rgbColorConfig.js');
 
       const regexps = [
         /.elevation-0\s+{/g,
         /box-shadow: 0px 0px 0px 0px rgba\(255,0,0,0.20\), 0px 0px 0px 0px rgba\(255,0,0,0.14\), 0px 0px 0px 0px rgba\(255,0,0,0.12\);\s+/g,
+      ];
+      regexps.forEach(function(regexp) {
+        assert.fileContentMatch(output, regexp);
+      });
+    });
+
+    it('should generate CSS file with utilities when base color is defined using a HEX triplet', async function() {
+      await buildCSSFile('./test/fixtures/hexColorConfig.js');
+
+      const regexps = [
+        /.elevation-0\s+{/g,
+        /box-shadow: 0px 0px 0px 0px rgba\(79,209,197,0.20\), 0px 0px 0px 0px rgba\(79,209,197,0.14\), 0px 0px 0px 0px rgba\(79,209,197,0.12\);\s+/g,
       ];
       regexps.forEach(function(regexp) {
         assert.fileContentMatch(output, regexp);
