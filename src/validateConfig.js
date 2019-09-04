@@ -5,7 +5,7 @@ function validateColor(color) {
     return null;
   }
 
-  const re = new RegExp(`${regex.rgb}|${regex.hex}`);
+  const re = new RegExp(`${regex.rgb}|${regex.hex}|${regex.customProperty}`);
   if (re.test(color)) {
     return null;
   } else {
