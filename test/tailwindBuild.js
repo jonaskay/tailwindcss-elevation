@@ -93,6 +93,18 @@ describe('tailwind', function() {
       });
     });
 
+    it('should generate CSS file with utilities when base color is defined using a custom property', async function() {
+      await buildCSSFile('./test/fixtures/varColorConfig.js');
+
+      const regexps = [
+        /.elevation-0\s+{/g,
+        /box-shadow: 0px 0px 0px 0px rgba\(var\(--color\),0.20\), 0px 0px 0px 0px rgba\(var\(--color\),0.14\), 0px 0px 0px 0px rgba\(var\(--color\),0.12\);\s+/g,
+      ];
+      regexps.forEach(function(regexp) {
+        assert.fileContentMatch(output, regexp);
+      });
+    });
+
     it('should generate CSS file with utilities when opacity boost is defined', async function() {
       await buildCSSFile('./test/fixtures/opacityConfig.js');
 

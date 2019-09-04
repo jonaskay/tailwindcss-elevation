@@ -35,6 +35,15 @@ describe('#utilities()', function() {
     );
   });
 
+  it('should return a utility for .elevation-1 when config includes color with a custom property', function() {
+    const config = { color: 'var(--blue)' };
+
+    assert.equal(
+      utilities(config)['.elevation-1'].boxShadow,
+      '0px 2px 1px -1px rgba(var(--blue),0.20), 0px 1px 1px 0px rgba(var(--blue),0.14), 0px 1px 3px 0px rgba(var(--blue),0.12)'
+    );
+  });
+
   it('should return a utility for .elevation-2 when config includes opacityBoost', function() {
     const config = { opacityBoost: '.23' };
     assert.equal(
