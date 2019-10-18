@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint index.js src/** test/**",
-    "test": "mocha"
+    "test": "nyc --reporter=lcov mocha"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -24,6 +24,7 @@
     "husky": ">=1",
     "lint-staged": ">=8",
     "mocha": "^6.0.2",
+    "nyc": "^14.1.1",
     "postcss-cli": "^6.1.2",
     "prettier": "1.18.2",
     "tailwindcss": "^1.0.4"
