@@ -1,5 +1,5 @@
-const validateConfig = require('./src/validateConfig');
-const utilities = require('./src/utilities');
+const validateConfig = require("./src/validateConfig");
+const utilities = require("./src/utilities");
 
 module.exports = function(variants, config) {
   const err = validateConfig(config);

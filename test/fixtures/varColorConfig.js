@@ -1,3 +1,3 @@
 module.exports = {
-  plugins: [require('../../index')([], { color: 'var(--color)' })],
+  plugins: [require("../../index")([], { color: "var(--color)" })]
 };

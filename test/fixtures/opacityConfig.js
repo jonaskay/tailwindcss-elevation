@@ -1,3 +1,3 @@
 module.exports = {
-  plugins: [require('../../index')([], { opacityBoost: '0.1' })],
+  plugins: [require("../../index")([], { opacityBoost: "0.1" })]
 };

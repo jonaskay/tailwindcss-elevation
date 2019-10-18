@@ -1,3 +1,3 @@
 module.exports = {
-  plugins: [require('../../index')(['responsive'])],
+  plugins: [require("../../index")(["responsive"])]
 };
