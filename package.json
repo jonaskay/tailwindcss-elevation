@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint index.js src/** test/**",
-    "test": "nyc --reporter=lcov mocha"
+    "test": "mocha"
   },
   "devDependencies": {
     "chai": "^4.2.0",
