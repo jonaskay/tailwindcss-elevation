@@ -1,4 +1,4 @@
-const validateConfig = require("./src/validateConfig");
+const validateConfig = require("./src/validate-config");
 const utilities = require("./src/utilities");
 
 module.exports = function(variants, config) {

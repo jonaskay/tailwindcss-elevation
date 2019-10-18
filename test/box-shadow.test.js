@@ -1,6 +1,6 @@
 const assert = require("chai").assert;
 
-const boxShadow = require("../src/boxShadow");
+const boxShadow = require("../src/box-shadow");
 
 describe("#boxShadow()", function() {
   it("should return undefined when z is not present", function() {

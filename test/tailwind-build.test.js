@@ -51,7 +51,7 @@ async function buildCSSFile(config) {
 describe("tailwind", function() {
   describe("build", function() {
     it("should generate CSS file with utilities", async function() {
-      await buildCSSFile("./test/fixtures/defaultConfig.js");
+      await buildCSSFile("./test/fixtures/default-config.js");
 
       const regexps = [
         /.elevation-0\s+{/g,
@@ -63,13 +63,13 @@ describe("tailwind", function() {
     });
 
     it("should generate CSS file with utilities when variants are defined", async function() {
-      await buildCSSFile("./test/fixtures/variantsConfig.js");
+      await buildCSSFile("./test/fixtures/variants-config.js");
 
       assert.fileContentMatch(output, /.sm\\:elevation-0\s+/g);
     });
 
     it("should generate CSS file with utilities when base color is defined using an RGB triplet", async function() {
-      await buildCSSFile("./test/fixtures/rgbColorConfig.js");
+      await buildCSSFile("./test/fixtures/rgb-color-config.js");
 
       const regexps = [
         /.elevation-0\s+{/g,
@@ -81,7 +81,7 @@ describe("tailwind", function() {
     });
 
     it("should generate CSS file with utilities when base color is defined using a HEX triplet", async function() {
-      await buildCSSFile("./test/fixtures/hexColorConfig.js");
+      await buildCSSFile("./test/fixtures/hex-color-config.js");
 
       const regexps = [
         /.elevation-0\s+{/g,
@@ -93,7 +93,7 @@ describe("tailwind", function() {
     });
 
     it("should generate CSS file with utilities when base color is defined using a custom property", async function() {
-      await buildCSSFile("./test/fixtures/varColorConfig.js");
+      await buildCSSFile("./test/fixtures/var-color-config.js");
 
       const regexps = [
         /.elevation-0\s+{/g,
@@ -105,7 +105,7 @@ describe("tailwind", function() {
     });
 
     it("should generate CSS file with utilities when opacity boost is defined", async function() {
-      await buildCSSFile("./test/fixtures/opacityConfig.js");
+      await buildCSSFile("./test/fixtures/opacity-config.js");
 
       assert.fileContentMatch(
         output,
@@ -115,7 +115,7 @@ describe("tailwind", function() {
 
     it("should error when config is invalid", async function() {
       try {
-        await buildCSSFile("./test/fixtures/invalidConfig.js");
+        await buildCSSFile("./test/fixtures/invalid-config.js");
       } catch (error) {
         assert.isOk(true);
         return;

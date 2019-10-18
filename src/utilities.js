@@ -1,4 +1,4 @@
-const boxShadow = require("./boxShadow");
+const boxShadow = require("./box-shadow");
 
 module.exports = function utilities(config = {}) {
   const result = {};

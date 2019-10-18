@@ -1,6 +1,6 @@
 const assert = require("chai").assert;
 
-const validateConfig = require("../src/validateConfig");
+const validateConfig = require("../src/validate-config");
 
 describe("#validateConfig()", function() {
   it("should return an error message if color is invalid", function() {
