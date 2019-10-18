@@ -1,5 +1,5 @@
 module.exports = {
   plugins: [
-    require('../../index')([], { color: 'invalid', opacityBoost: 'invalid' }),
-  ],
+    require("../../index")([], { color: "invalid", opacityBoost: "invalid" })
+  ]
 };

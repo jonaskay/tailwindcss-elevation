@@ -1,4 +1,4 @@
-const regex = require('./regex');
+const regex = require("./regex");
 
 function validateColor(color) {
   if (!color) {
