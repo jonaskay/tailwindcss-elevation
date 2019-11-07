@@ -50,6 +50,8 @@ async function buildCSSFile(config) {
 
 describe("tailwind", function() {
   describe("build", function() {
+    this.timeout(5000);
+
     it("should generate CSS file with utilities", async function() {
       await buildCSSFile("./test/fixtures/default-config.js");
 
