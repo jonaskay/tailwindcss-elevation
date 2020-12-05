@@ -1,49 +1,6 @@
 {
-  "name": "tailwindcss-elevation",
-  "version": "0.3.5",
-  "description": "Tailwind CSS plugin for Material Components elevation classes.",
-  "author": "Joonas Kykkänen <jonaskay@iki.fi>",
-  "repository": "https://github.com/jonaskay/tailwindcss-elevation.git",
-  "main": "index.js",
-  "license": "MIT",
-  "scripts": {
-    "lint": "eslint index.js src/** test/**",
-    "test": "mocha",
-    "test-reporter": "nyc --reporter=lcov mocha"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.0.4",
-    "chai": "^4.2.0",
-    "chai-fs": "^2.0.0",
-    "eslint": "^7.15.0",
-    "eslint-config-prettier": "^6.4.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "husky": ">=1",
-    "lint-staged": ">=8",
-    "mocha": "^8.1.1",
-    "nyc": "^15.0.0",
-    "postcss": "^8.1.14",
-    "postcss-cli": "^8.3.0",
-    "prettier": "2.2.1",
-    "tailwindcss": "^2.0.0"
-  },
-  "dependencies": {
-    "hex-rgb": "^4.1.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  }
+  "private": "true",
+  "workspaces": [
+    "tailwindcss-elevation"
+  ]
 }
