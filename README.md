@@ -21,14 +21,7 @@ module.exports = {
 
 If you don't need the responsive versions, you can pass in an empty array.
 
-You can also include other supported variants. The full list of available variants is:
-
-* `responsive`
-* `hover`
-* `focus`
-* `active`
-* `group-hover`
-* `focus-within`
+You can also include other supported variants. For the full list of available variants, see https://tailwindcss.com/docs/configuring-variants.
 
 To learn more about configuring your Tailwind CSS installation, see https://tailwindcss.com/docs/configuration.
 
