@@ -11,6 +11,10 @@
     "test": "mocha",
     "test-reporter": "nyc --reporter=lcov mocha"
   },
+  "files": [
+    "index.js",
+    "src/"
+  ],
   "devDependencies": {
     "autoprefixer": "^10.0.4",
     "chai": "^4.2.0",
