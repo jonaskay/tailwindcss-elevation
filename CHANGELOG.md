@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update tailwindcss version
+
+### Security
+
+- Update dependencies to fix security vulnerabilities
+
 ## [0.3.5] - 2020-08-08
 
 ### Security
