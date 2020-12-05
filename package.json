@@ -12,6 +12,7 @@
     "test-reporter": "nyc --reporter=lcov mocha"
   },
   "devDependencies": {
+    "autoprefixer": "^10.0.4",
     "chai": "^4.2.0",
     "chai-fs": "^2.0.0",
     "eslint": "^7.15.0",
@@ -26,9 +27,10 @@
     "lint-staged": ">=8",
     "mocha": "^8.1.1",
     "nyc": "^15.0.0",
-    "postcss-cli": "^7.1.0",
+    "postcss": "^8.1.14",
+    "postcss-cli": "^8.3.0",
     "prettier": "2.2.1",
-    "tailwindcss": "^1.2.0"
+    "tailwindcss": "^2.0.0"
   },
   "dependencies": {
     "hex-rgb": "^4.1.0"
