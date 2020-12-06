@@ -12,6 +12,8 @@
     "test-reporter": "nyc --reporter=lcov mocha"
   },
   "files": [
+    "README.md",
+    "CHANGELOG.md",
     "index.js",
     "src/"
   ],

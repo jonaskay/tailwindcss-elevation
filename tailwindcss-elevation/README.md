@@ -58,10 +58,6 @@ You can apply elevation to an element using the `.elevation-{z-value}` utilities
 
 The z values range from 0 to 24.
 
-## Changelog
-
-You can find the changelog of the `tailwindcss-elevation` package [here](/tailwindcss-elevation/CHANGELOG.md).
-
 ## Material documentation
 * [Material Design: Elevation](https://material.io/design/environment/elevation.html)
 * [Material Components for the web](https://material.io/develop/web/)
