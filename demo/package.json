@@ -7,7 +7,7 @@
   "devDependencies": {
     "postcss-cli": "^6.1.2",
     "tailwindcss": "^1.0.4",
-    "tailwindcss-elevation": "^0.3.0"
+    "tailwindcss-elevation": "*"
   },
   "scripts": {
     "build": "postcss src/styles.css -o dist/styles.css"
