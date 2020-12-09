@@ -18,7 +18,7 @@
     "src/"
   ],
   "devDependencies": {
-    "autoprefixer": "^10.0.4",
+    "autoprefixer": "^10.1.0",
     "chai": "^4.2.0",
     "chai-fs": "^2.0.0",
     "eslint": "^7.15.0",
