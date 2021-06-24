@@ -6,7 +6,7 @@
   "private": true,
   "devDependencies": {
     "postcss-cli": "^6.1.2",
-    "tailwindcss": "^1.0.4",
+    "tailwindcss": "^2.2.4",
     "tailwindcss-elevation": "*"
   },
   "scripts": {
