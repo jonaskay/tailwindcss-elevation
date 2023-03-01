@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update tailwindcss version
 - Move to tailwindcss/plugin
 
+### Security
+
+- Update dependencies to fix security vulnerabilities
+
 ## [1.0.1] - 2020-12-06
 
 ### Fixed
