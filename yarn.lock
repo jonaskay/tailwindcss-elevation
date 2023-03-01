@@ -3240,15 +3240,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.1.20":
-  version: 3.1.20
-  resolution: "nanoid@npm:3.1.20"
-  bin:
-    nanoid: bin/nanoid.cjs
-  checksum: f6246023d5d8313c2c16be05c18cdb189a6de50ab6418b513b34086eda4aabd12866b2cbe435548c760dc43cf11830b26b14b113afde47305398e3345795e433
-  languageName: node
-  linkType: hard
-
 "nanoid@npm:^3.3.4":
   version: 3.3.4
   resolution: "nanoid@npm:3.3.4"
@@ -3888,7 +3879,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.0.9":
+"postcss@npm:^8.0.9, postcss@npm:^8.2.13":
   version: 8.4.21
   resolution: "postcss@npm:8.4.21"
   dependencies:
@@ -3896,17 +3887,6 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: e39ac60ccd1542d4f9d93d894048aac0d686b3bb38e927d8386005718e6793dbbb46930f0a523fe382f1bbd843c6d980aaea791252bf5e176180e5a4336d9679
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.1.14":
-  version: 8.1.14
-  resolution: "postcss@npm:8.1.14"
-  dependencies:
-    colorette: ^1.2.1
-    nanoid: ^3.1.20
-    source-map: ^0.6.1
-  checksum: bf593c62b7cd116aa967a9d73eb3d496f106571ddf3a8cce55f30a62ba26fcc89c144abc52646b2938c3923cc9569902a7403e4fd1cd394dc7082a0b44bb6a25
   languageName: node
   linkType: hard
 
@@ -4731,7 +4711,7 @@ __metadata:
     lint-staged: ">=8"
     mocha: ^8.1.1
     nyc: ^15.0.0
-    postcss: ^8.1.14
+    postcss: ^8.2.13
     postcss-cli: ^10.1.0
     prettier: 2.2.1
   peerDependencies:
