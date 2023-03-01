@@ -1,3 +1,4 @@
 module.exports = {
-  plugins: [require("../../index")([], { color: "255,0,0" })]
+  content: ["./test/fixtures/example.html"],
+  plugins: [require("../../index")({ color: "255,0,0" })],
 };

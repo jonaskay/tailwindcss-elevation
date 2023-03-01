@@ -1,3 +1,4 @@
 module.exports = {
-  plugins: [require('tailwindcss-elevation')([])],
+  content: ["../index.html"],
+  plugins: [require("tailwindcss-elevation")],
 };

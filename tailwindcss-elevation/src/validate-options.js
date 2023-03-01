@@ -30,13 +30,13 @@ function validateOpacityBoost(opacityBoost) {
   return null;
 }
 
-module.exports = function validateConfig(config) {
-  if (!config) {
+module.exports = function validateOptions(options) {
+  if (!options) {
     return null;
   }
 
   const error =
-    validateColor(config.color) || validateOpacityBoost(config.opacityBoost);
+    validateColor(options.color) || validateOpacityBoost(options.opacityBoost);
   if (!error) {
     return null;
   }

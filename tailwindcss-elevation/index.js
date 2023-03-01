@@ -1,13 +1,15 @@
-const validateConfig = require("./src/validate-config");
+const plugin = require("tailwindcss/plugin");
+
+const validateOptions = require("./src/validate-options");
 const utilities = require("./src/utilities");
 
-module.exports = function(variants, config) {
-  const err = validateConfig(config);
-  if (err) {
-    throw err;
-  }
+module.exports = plugin.withOptions(function (options = {}) {
+  return function ({ addUtilities }) {
+    const err = validateOptions(options);
+    if (err) {
+      throw err;
+    }
 
-  return function({ addUtilities }) {
-    addUtilities(utilities(config), variants);
+    addUtilities(utilities(options));
   };
-};
+});

@@ -1,3 +1,4 @@
 module.exports = {
-  plugins: [require("../../index")([], { opacityBoost: "0.1" })]
+  content: ["./test/fixtures/example.html"],
+  plugins: [require("../../index")({ opacityBoost: "0.1" })],
 };

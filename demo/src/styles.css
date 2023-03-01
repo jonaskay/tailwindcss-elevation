@@ -1,34 +1,36 @@
 @tailwind base;
-
 @tailwind components;
-
-main {
-  margin: 0 auto;
-  max-width: 1024px;
-  padding: 1rem;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  margin: 2rem 0;
-}
-
-nav {
-  align-self: center;
-}
-
-.demo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {
-  margin: 1rem;
-  padding: 2rem .5rem;
-  text-align: center;
-  width: 150px;
-}
-
 @tailwind utilities;
+
+@layer base {
+  main {
+    margin: 0 auto;
+    max-width: 1024px;
+    padding: 1rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+  }
+
+  nav {
+    align-self: center;
+  }
+}
+
+@layer components {
+  .demo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    margin: 1rem;
+    padding: 2rem .5rem;
+    text-align: center;
+    width: 150px;
+  }
+}

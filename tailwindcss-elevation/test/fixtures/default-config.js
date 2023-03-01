@@ -1,3 +1,4 @@
 module.exports = {
-  plugins: [require("../../index")([])]
+  content: ["./test/fixtures/example.html"],
+  plugins: [require("../../index")],
 };

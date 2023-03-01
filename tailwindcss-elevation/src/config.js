@@ -25,7 +25,7 @@ module.exports = {
       21: "0px 10px 13px -6px",
       22: "0px 10px 14px -6px",
       23: "0px 11px 14px -7px",
-      24: "0px 11px 15px -7px"
+      24: "0px 11px 15px -7px",
     },
     penumbra: {
       0: "0px 0px 0px 0px",
@@ -52,7 +52,7 @@ module.exports = {
       21: "0px 21px 33px 3px",
       22: "0px 22px 35px 3px",
       23: "0px 23px 36px 3px",
-      24: "0px 24px 38px 3px"
+      24: "0px 24px 38px 3px",
     },
     ambient: {
       0: "0px 0px 0px 0px",
@@ -79,13 +79,13 @@ module.exports = {
       21: "0px 8px 40px 7px",
       22: "0px 8px 42px 7px",
       23: "0px 9px 44px 8px",
-      24: "0px 9px 46px 8px"
-    }
+      24: "0px 9px 46px 8px",
+    },
   },
 
   opacity: {
     umbra: ".2",
     penumbra: ".14",
-    ambient: ".12"
-  }
+    ambient: ".12",
+  },
 };

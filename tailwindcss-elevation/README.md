@@ -14,26 +14,21 @@ To activate the plugin, add a `tailwind.config.js` file to the root of your proj
 ```javascript
 module.exports = {
   plugins: [
-    require('tailwindcss-elevation')(['responsive']),
+    require('tailwindcss-elevation'),
   ]
 }
 ```
-
-If you don't need the responsive versions, you can pass in an empty array.
-
-You can also include other supported variants. For the full list of available variants, see https://tailwindcss.com/docs/configuring-variants.
 
 To learn more about configuring your Tailwind CSS installation, see https://tailwindcss.com/docs/configuration.
 
 ### Configuration
 
-To change the default configurations, you can include a config object:
+To change the default configurations, you can include an options object:
 
 ```javascript
 module.exports = {
   plugins: [
     require('tailwindcss-elevation')(
-      [],
       {
         color: '77,192,181',
         opacityBoost: '0.23'
@@ -43,7 +38,7 @@ module.exports = {
 }
 ```
 
-Config object accepts the following properties:
+Options accept the following properties:
 
 * `color` changes the default box-shadow base color and accepts an RGB (e.g. `'77,192,181'`) or HEX triplet (e.g. `'#4dc0b5'`) as its value. When using a CSS custom property (variable) as the value, you have to use an RGB triplet.
 * `opacityBoost` is added to the default box-shadow opacity and accepts a number between 0.0 and 1.0
