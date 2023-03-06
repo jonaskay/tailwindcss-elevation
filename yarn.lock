@@ -2443,10 +2443,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hex-rgb@npm:^4.1.0":
-  version: 4.2.0
-  resolution: "hex-rgb@npm:4.2.0"
-  checksum: 9018826c19553fbb18687d5c7b1ad3a871e17b8d44cdf9d575d15ec0cb4a671dd1f5941723de434fe0d0d128941129f457274379c148e131833b2f2553bc2cd2
+"hex-rgb@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "hex-rgb@npm:5.0.0"
+  checksum: a88e3aaae5311f98716fb41a4e5efbc8d823de5c5d40f9ea77d111de96f3fb087d809021f85d40a98048a4827cd30945413bf1a5001ae7c23727ac628d666d26
   languageName: node
   linkType: hard
 
@@ -4872,7 +4872,7 @@ __metadata:
     eslint-plugin-prettier: ^3.1.1
     eslint-plugin-promise: ^4.2.1
     eslint-plugin-standard: ^4.0.1
-    hex-rgb: ^4.1.0
+    hex-rgb: ^5.0.0
     husky: ">=1"
     lint-staged: ">=8"
     mocha: ^8.1.1

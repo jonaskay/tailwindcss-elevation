@@ -38,7 +38,7 @@
     "prettier": "2.2.1"
   },
   "dependencies": {
-    "hex-rgb": "^4.1.0"
+    "hex-rgb": "^5.0.0"
   },
   "peerDependencies": {
     "tailwindcss": "^3.0.1"
